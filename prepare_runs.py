@@ -1,7 +1,8 @@
 import os
 import copy
 from pathlib import Path
-from evcouplings.utils import read_config_file, write_config_file
+from evcouplings.utils import read_config_file
+from evcouplings.utils.app import run_jobs, unroll_config
 
 master_config = read_config_file('config.txt')
 alignments_folder = 'prosite_alignments'
@@ -16,7 +17,9 @@ for alignment_file in alignment_files:
     current_config = copy.deepcopy(master_config)
     os.mkdir(directory)
 
-    current_config['global']['prefix'] = str(Path(directory).resolve())
+    current_config['global']['prefix'] = directory
     current_config['global']['sequence_id'] = alignment_name
     current_config['align']['input_alignment'] = alignment_path
-    write_config_file(directory + "/config.txt", current_config)
+
+    conf = unroll_config(current_config)
+    run_jobs(conf, current_config, overwrite=True)
