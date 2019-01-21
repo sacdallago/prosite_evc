@@ -7,7 +7,6 @@ global:
   cpu: null
   prefix: prefix
   region: null
-  sequence_file: server_resources/sequence_file
   sequence_id: null
   theta: 0.8
 align:
