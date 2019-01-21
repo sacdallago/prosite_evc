@@ -253,9 +253,7 @@ pipeline: protein_monomer
 stages:
 - align
 - couplings
-- compare
 - mutate
-- fold
 tools:
   cns: /n/groups/marks/pipelines/evcouplings/software/cns_solve_1.21/intel-x86_64bit-linux/bin/cns
   hhfilter: /n/groups/marks/pipelines/evcouplings/software/hh-suite/bin/hhfilter
