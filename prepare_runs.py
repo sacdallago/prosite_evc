@@ -23,7 +23,7 @@ for alignment_file in alignment_files:
     os.mkdir(directory)
 
     current_config['global']['prefix'] = directory
-    current_config['global']['sequence_id'] = first_sequence_id
+    current_config['global']['sequence_id'] = first_sequence_id[0]
     current_config['align']['input_alignment'] = alignment_path
 
     conf = unroll_config(current_config)
