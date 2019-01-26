@@ -18,6 +18,7 @@ align:
   minimum_column_coverage: 70
   sequence_threshold: 0.2
   extract_annotation: True
+  compute_num_effective_seqs: False
 couplings:
   alphabet: null
   ignore_gaps: true
