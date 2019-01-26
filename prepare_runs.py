@@ -5,7 +5,7 @@ from evcouplings.align import read_fasta, parse_header
 from evcouplings.utils import read_config_file
 from evcouplings.utils.app import run_jobs, unroll_config
 
-master_config = read_config_file('config.txt')
+master_config = read_config_file('config.yml')
 alignments_folder = 'prosite_alignments'
 alignment_files = [f for f in os.listdir(alignments_folder) if os.path.isfile(os.path.join(alignments_folder, f))]
 
